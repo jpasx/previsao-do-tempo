@@ -6,100 +6,64 @@ body {
   background-size: cover;
   color: white;
   text-align: center;
+  overflow-x: hidden;
 }
 
-
-.container {
-  padding: 20px;
+/* 🌥️ Fundo animado com nuvens */
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+  filter: blur(20px);
+  animation: moveClouds linear infinite;
 }
 
-h1 {
-  margin-bottom: 20px;
-  text-shadow: 1px 1px 3px #000;
+.cloud1 {
+  width: 200px;
+  height: 60px;
+  top: 10%;
+  left: -250px;
+  animation-duration: 60s;
 }
 
-.search-box {
-  margin-bottom: 20px;
+.cloud2 {
+  width: 300px;
+  height: 90px;
+  top: 30%;
+  left: -350px;
+  animation-duration: 80s;
 }
 
-.search-box input {
-  padding: 10px;
-  border-radius: 8px 0 0 8px;
-  border: none;
-  width: 250px;
-  outline: none;
+.cloud3 {
+  width: 150px;
+  height: 50px;
+  top: 60%;
+  left: -200px;
+  animation-duration: 50s;
 }
 
-.search-box button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 0 8px 8px 0;
-  background: #005bea;
-  color: white;
-  cursor: pointer;
-}
-
-.weather-card,
-.forecast-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  margin: 10px auto;
-  border-radius: 12px;
-  max-width: 400px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.weather-card img {
-  width: 100px;
-}
-
-.weather-card h1 {
-  font-size: 2.5em;
-  color: #ff4081;
-}
-
-.details {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.forecast-list {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 15px;
-  flex-wrap: wrap;
-}
-
-.forecast-item {
-  text-align: center;
-  margin: 5px;
-}
-
-.forecast-item img {
-  width: 40px;
-}
-
-.forecast-card canvas {
-  max-height: 220px !important;
-  width: 100% !important;
+@keyframes moveClouds {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(120vw);
+  }
 }
 
 /* Marca d'água */
-.watermark {
+.footer {
   position: fixed;
   bottom: 10px;
   right: 15px;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.6);
-  font-style: italic;
-  z-index: 1000;
-}
-.watermark a {
+  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
+}
+.footer a {
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
 }
-.watermark a:hover {
+.footer a:hover {
   text-decoration: underline;
-  color: white;
 }
